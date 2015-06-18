@@ -8,8 +8,11 @@ class Ability
 
     if user.admin?
       can :manage, :all
+    elsif user.email.present?
+      can :read, :all
+      can :create, Comment
     else
-      can :read, Article
+      can :read, :all
     end
     #
     # The first argument to `can` is the action you are giving the user

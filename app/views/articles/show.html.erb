@@ -8,8 +8,11 @@
 <hr/>
 <h2>Comments</h2>
 <%= render @article.comments %>
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+
+<% if can? :create, Comment %>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+<% end %>
 
 
 <%= link_to 'Back', articles_path %>
