@@ -18,4 +18,21 @@
     background-color: #eee;
     border: 1px solid #ccc;
     padding: 5px;
+    display: inline-block;
+}
+
+.flash {
+    padding: 10px;
+    color: #fff;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.flash.alert {
+    background-color: red;
+}
+
+.flash.notice,
+.flash.success {
+    background-color: green;
 }
