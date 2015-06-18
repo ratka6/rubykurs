@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="panel">
+  <% if user_signed_in? %>
+    Jesteś zalogowany jako: <%= current_user.email %> -
+    <%= link_to "Wyloguj", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Zaloguj", new_user_session_path %>
+  <% end %>
+</div>
 <%= yield %>
 
 </body>
